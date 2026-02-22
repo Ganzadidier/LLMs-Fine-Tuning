@@ -2,9 +2,11 @@
 
 > Fine-tuned `Qwen2.5-1.5B-Instruct` with LoRA on 2,000 medical Q&A pairs, deployed via an interactive Gradio chatbot.
 
-https://colab.research.google.com/drive/1SV_iQ8G1mj3RC6WjhWPqsu2zKAOzw5HG?usp=drive_link
-https://colab.research.google.com/drive/1yiq7booGodwyr0j4z4RA_8M9FXkbcn4Q?usp=sharing
-https://huggingface.co/dganza/medassist-qwen25-lora
+Main_notebook : https://colab.research.google.com/drive/1SV_iQ8G1mj3RC6WjhWPqsu2zKAOzw5HG?usp=drive_link
+
+Qucik_Demo : https://colab.research.google.com/drive/1yiq7booGodwyr0j4z4RA_8M9FXkbcn4Q?usp=sharing
+
+HuggingFace Model : https://huggingface.co/dganza/medassist-qwen25-lora
 
 ---
 
@@ -240,4 +242,5 @@ numpy
 - Dataset: [medalpaca/medical_meadow_medical_flashcards](https://huggingface.co/datasets/medalpaca/medical_meadow_medical_flashcards)
 - Fine-tuning method: [LoRA — Hu et al., 2021](https://arxiv.org/abs/2106.09685)
 - Quantization: [bitsandbytes](https://github.com/TimDettmers/bitsandbytes) by Tim Dettmers
+
 
