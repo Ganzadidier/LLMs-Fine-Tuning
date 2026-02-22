@@ -2,6 +2,10 @@
 
 > Fine-tuned `Qwen2.5-1.5B-Instruct` with LoRA on 2,000 medical Q&A pairs, deployed via an interactive Gradio chatbot.
 
+
+Live Deployment: https://huggingface.co/spaces/dganza/medassist-gradio_demo 
+
+
 Main_notebook : https://colab.research.google.com/drive/1SV_iQ8G1mj3RC6WjhWPqsu2zKAOzw5HG?usp=drive_link
 
 Qucik_Demo : https://colab.research.google.com/drive/1yiq7booGodwyr0j4z4RA_8M9FXkbcn4Q?usp=sharing
@@ -78,14 +82,13 @@ The fine-tuned LoRA adapter (228MB) is hosted on Hugging Face — no large files
 
 ## Experiments
 
-Four LoRA configurations were trained and evaluated:
+Three LoRA configurations were trained and evaluated:
 
 | Experiment | LoRA r | Learning Rate | Epochs | Description |
 |---|---|---|---|---|
 | **Exp1** | 8 | 2e-4 | 1 | Conservative baseline — fewest parameters, single pass |
 | **Exp2** | 16 | 1e-4 | 2 | Balanced — doubled rank, halved LR, more convergence time |
 | **Exp3** | 32 | 5e-5 | 2 | Conservative LR — tests careful fine-tuning with higher rank |
-| **Exp4** ⭐ | 64 | 2e-4 | 2 | High rank + aggressive LR — maximum expressiveness |
 
 ---
 
@@ -118,11 +121,13 @@ Qualitative and quantitative comparison on 30 held-out samples shows consistent 
 
 > **No training required.** The model is downloaded directly from HuggingFace.
 
+Try out Live deployment : https://huggingface.co/spaces/dganza/medassist-gradio_demo  or
+
 ### Option 1 — Google Colab (recommended)
 
 1. Click the badge below to open the demo notebook in Colab:
 
-   [![Open Quick Demo In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/your-repo/blob/main/MedAssist_Quick_Demo.ipynb)
+ https://colab.research.google.com/drive/1yiq7booGodwyr0j4z4RA_8M9FXkbcn4Q?usp=sharing 
 
 2. Set runtime to GPU: **Runtime → Change runtime type → T4 GPU → Save**
 
@@ -136,7 +141,7 @@ Requirements: Python 3.9+, NVIDIA GPU with 4GB+ VRAM (CPU works but is very slow
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/Ganzadidier/LLMs-Fine-Tuning.git
 cd your-repo
 
 # 2. Install dependencies
@@ -171,7 +176,7 @@ jupyter notebook MedAssist_Quick_Demo.ipynb
 
 1. Open the main notebook in Colab:
 
-   [![Open Main Notebook In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/your-username/your-repo/blob/main/Medassist_qwen25_lora_finetune__1__final.ipynb)
+   https://colab.research.google.com/drive/1SV_iQ8G1mj3RC6WjhWPqsu2zKAOzw5HG?usp=drive_link 
 
 2. Set runtime to GPU: **Runtime → Change runtime type → T4 GPU → Save**
 
@@ -242,5 +247,6 @@ numpy
 - Dataset: [medalpaca/medical_meadow_medical_flashcards](https://huggingface.co/datasets/medalpaca/medical_meadow_medical_flashcards)
 - Fine-tuning method: [LoRA — Hu et al., 2021](https://arxiv.org/abs/2106.09685)
 - Quantization: [bitsandbytes](https://github.com/TimDettmers/bitsandbytes) by Tim Dettmers
+
 
 
